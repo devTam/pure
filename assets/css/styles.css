@@ -402,4 +402,8 @@ body {
     height: 50vh;
   }
 }
+
+.toast {
+  font-size: 1.6rem;
+}
 /*# sourceMappingURL=styles.css.map */

@@ -1,11 +1,23 @@
+// SET UP FIREBASE
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: 'AIzaSyAEyXjkWyPBc_UBY9TKyg7nCpoe0G0EY_Q',
+  authDomain: 'pure-kaduna.firebaseapp.com',
+  projectId: 'pure-kaduna',
+  storageBucket: 'pure-kaduna.appspot.com',
+  messagingSenderId: '590961830195',
+  appId: '1:590961830195:web:c4efd359344678f1fb3646',
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
 // TIMER
 
 // Set the date we're counting down to
-var countDownDate = new Date("January 9, 2021 11:00:00").getTime();
+var countDownDate = new Date('January 9, 2021 11:00:00').getTime();
 
 // Update the count down every 1 second
-var x = setInterval(function() {
-
+var x = setInterval(function () {
   // Get today's date and time
   var now = new Date().getTime();
 
@@ -19,7 +31,7 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById("timer").innerHTML = `
+  document.getElementById('timer').innerHTML = `
   <div class="time">
     <div class="number">${days}</div>
     <div class="alpha">DAYS</div>
@@ -47,7 +59,7 @@ var x = setInterval(function() {
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("timer").innerHTML = "EXPIRED";
+    document.getElementById('timer').innerHTML = 'EXPIRED';
   }
 }, 1000);
 
@@ -70,6 +82,75 @@ var galleryTop = new Swiper('.gallery-top', {
     disableOnInteraction: false,
   },
   thumbs: {
-    swiper: galleryThumbs
-  }
+    swiper: galleryThumbs,
+  },
 });
+
+// FORM DETAILS
+const nameEntered = document.getElementById('name');
+const phone = document.getElementById('number');
+const occupation = document.getElementById('occupation');
+const form = document.getElementById('form');
+const btn = document.getElementById('register');
+
+const db = firebase.firestore();
+
+// toast options
+toastr.options = {
+  "closeButton": true,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": true,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  let nameValue = nameEntered.value;
+  let phoneValue = phone.value;
+  let occupationValue = occupation.value;
+  let session = document.getElementById('session-select').value;
+
+  const res = db
+    .collection('data')
+    .doc(`${nameValue}`)
+    .set(
+      {
+        name: nameValue,
+        occupation: occupationValue,
+        phone: phoneValue,
+        session: session,
+      },
+      { merge: true }
+    )
+    .then(() => {
+      // Clear form after registration
+      nameEntered.value = '';
+      phone.value = '';
+      occupation.value = '';
+
+      // close modal
+      btn.setAttribute('data-bs-dismiss', 'modal');
+      btn.click();
+      btn.removeAttribute('data-bs-dismiss');
+
+      // Show toast
+      toastr["success"]("We have saved you a spot", "Congratulations!")
+      
+
+    });
+
+});
+
+
