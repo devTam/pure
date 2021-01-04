@@ -370,6 +370,7 @@ body {
 @media only screen and (max-width: 430px) {
   #timer {
     padding: 8px 20px;
+    margin-top: -40px;
   }
   #timer .time {
     margin: 8px 10px;
