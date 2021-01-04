@@ -368,6 +368,10 @@ body {
 }
 
 @media only screen and (max-width: 430px) {
+  #form input, #form select {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
   #timer {
     padding: 8px 20px;
     margin-top: -40px;
