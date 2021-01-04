@@ -338,6 +338,12 @@ body {
   border: 1px solid #ced4da;
 }
 
+@media only screen and (min-width: 768px) {
+  .card {
+    min-height: 238px;
+  }
+}
+
 @media only screen and (max-width: 992px) {
   .gallery-images {
     width: 70vw;
