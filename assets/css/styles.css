@@ -184,6 +184,7 @@ body {
 }
 
 .intro-video {
+  max-width: 100%;
   text-align: center;
   -webkit-box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
           box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
@@ -335,5 +336,69 @@ body {
   width: 100%;
   outline: 0;
   border: 1px solid #ced4da;
+}
+
+@media only screen and (max-width: 992px) {
+  .gallery-images {
+    width: 70vw;
+    height: 70vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+  #timer {
+    padding: 10px 60px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  html {
+    font-size: 45%;
+  }
+  #timer {
+    padding: 8px 40px;
+  }
+  .gallery-images {
+    width: 90vw;
+    height: 60vh;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  #timer {
+    padding: 8px 20px;
+  }
+  #timer .time {
+    margin: 8px 10px;
+  }
+  #timer .column {
+    font-size: 2rem;
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+  }
+  .gallery-images {
+    width: 90vw;
+    height: 50vh;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  #timer {
+    padding: 5px 8px;
+    margin-top: -34px;
+  }
+  #timer .time {
+    margin: 8px;
+  }
+  #timer .time .number {
+    font-size: 2.5rem;
+  }
+  .gallery-images {
+    width: 90vw;
+    height: 50vh;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
