@@ -15,7 +15,7 @@ html {
 :root {
   --main-font: 'Lato', sans-serif;
   --color-primary: #e1e3dd;
-  --color-secondary: rgb(103, 189, 23);
+  --color-secondary: rgb(96, 163, 33);
   --background-color: #264653;
   --header-color: #465775;
   --btn-color: #2a9d8f;
@@ -278,11 +278,35 @@ body {
 
 .footer__logo img {
   max-height: 100%;
-  width: 100px;
+  width: 130px;
 }
 
 .footer__text span {
   margin-left: 20px;
+}
+
+// Modal styles
+.modal, .modal-title, option {
+  font-size: 1.6rem;
+}
+
+.modal-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.modal-btn {
+  font-size: 1.6rem;
+  width: 100%;
+  padding: 5px 15px;
+  letter-spacing: 1.5px;
+}
+
+.select-session, input {
+  display: block;
+  width: 100%;
+  outline: 0;
+  border: 1px solid #ced4da;
 }
 
 
