@@ -103,6 +103,10 @@ body {
   
 }
 
+.date {
+  text-align: center;
+}
+
 // TIMER
 
 #timer {
@@ -413,6 +417,14 @@ body {
 
 .toast {
   font-size: 1.6rem;
+}
+
+.fee {
+  color: var(--color-secondary);
+}
+
+.pm {
+  font-size: 1.7rem;
 }
 
 

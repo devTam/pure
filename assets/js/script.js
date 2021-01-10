@@ -14,7 +14,7 @@ firebase.initializeApp(firebaseConfig);
 // TIMER
 
 // Set the date we're counting down to
-var countDownDate = new Date('January 9, 2021 11:00:00').getTime();
+var countDownDate = new Date('January 23, 2021 12:30:00').getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function () {
@@ -90,6 +90,7 @@ var galleryTop = new Swiper('.gallery-top', {
 const nameEntered = document.getElementById('name');
 const phone = document.getElementById('number');
 const occupation = document.getElementById('occupation');
+const email = document.getElementById('email');
 const form = document.getElementById('form');
 const btn = document.getElementById('register');
 
@@ -97,22 +98,22 @@ const db = firebase.firestore();
 
 // toast options
 toastr.options = {
-  "closeButton": true,
-  "debug": false,
-  "newestOnTop": false,
-  "progressBar": true,
-  "positionClass": "toast-top-right",
-  "preventDuplicates": false,
-  "onclick": null,
-  "showDuration": "300",
-  "hideDuration": "1000",
-  "timeOut": "5000",
-  "extendedTimeOut": "1000",
-  "showEasing": "swing",
-  "hideEasing": "linear",
-  "showMethod": "fadeIn",
-  "hideMethod": "fadeOut"
-}
+  closeButton: true,
+  debug: false,
+  newestOnTop: false,
+  progressBar: true,
+  positionClass: 'toast-top-right',
+  preventDuplicates: false,
+  onclick: null,
+  showDuration: '300',
+  hideDuration: '1000',
+  timeOut: '5000',
+  extendedTimeOut: '1000',
+  showEasing: 'swing',
+  hideEasing: 'linear',
+  showMethod: 'fadeIn',
+  hideMethod: 'fadeOut',
+};
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -120,7 +121,7 @@ form.addEventListener('submit', (e) => {
   let nameValue = nameEntered.value;
   let phoneValue = phone.value;
   let occupationValue = occupation.value;
-  let session = document.getElementById('session-select').value;
+  let emailValue = email.value;
 
   const res = db
     .collection('data')
@@ -130,7 +131,7 @@ form.addEventListener('submit', (e) => {
         name: nameValue,
         occupation: occupationValue,
         phone: phoneValue,
-        session: session,
+        email: emailValue ? emailValue : '',
       },
       { merge: true }
     )
@@ -139,6 +140,7 @@ form.addEventListener('submit', (e) => {
       nameEntered.value = '';
       phone.value = '';
       occupation.value = '';
+      email.value = '';
 
       // close modal
       btn.setAttribute('data-bs-dismiss', 'modal');
@@ -146,11 +148,16 @@ form.addEventListener('submit', (e) => {
       btn.removeAttribute('data-bs-dismiss');
 
       // Show toast
-      toastr["success"]("We have saved you a spot", "Congratulations!")
-      
-
+      toastr['success']('We have saved you a spot', 'Congratulations!');
     });
-
 });
 
+// GET DOCS
+// const getMarker = async() => {
+//   const snapshot = await db.collection('data').get();
 
+//   return snapshot.docs.map(doc => doc.data());
+
+// }
+
+// getMarker().then(result => console.log(result))

@@ -39,7 +39,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
 
-    <title>Kaduna business kick off</title>
+    <title>Supplement Millionaire Boss</title>
   </head>
   <body>
     <section class="banner">
@@ -50,11 +50,11 @@
       <div class="banner__content container-fluid">
         <div class="date">
           <i class="far fa-calendar-alt"></i>
-          SATURDAY, 9TH JANUARY 2021
+          SATURDAY, 23RD JANUARY 2021, 12:30<span style="color: rgb(62, 228, 62);" class="pm">PM</span>
         </div>
-        <div class="event-name text-center">KADUNA BUSINESS KICK OFF</div>
+        <div class="event-name text-center">SUPPLEMENT MILLIONAIRE BOSS</div>
         <div class="venue">
-          <i class="fas fa-map-marker-alt"></i>REGVIEW HOTEL, KADUNA
+          <i class="fas fa-map-marker-alt"></i>CITY BAY, MAKURDI
         </div>
         <div class="banner__btn-container">
           <button
@@ -68,7 +68,7 @@
       </div>
     </section>
     <section id="timer">
-      <div class="time">
+      <!-- <div class="time">
         <div class="number">345</div>
         <div class="alpha">DAYS</div>
       </div>
@@ -86,7 +86,7 @@
       <div class="time">
         <div class="number">42</div>
         <div class="alpha">SECONDS</div>
-      </div>
+      </div> -->
     </section>
 
     <section class="reason">
@@ -361,7 +361,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="register-title">SAVE A SEAT!</h5>
+            <h5 class="modal-title" id="register-title">GATE FEE AT VENUE: <br /><span class="fee">₦1000</span>/seat<br /><strike style="color: red; font-size: 1.5rem">₦10 000</strike> <span class="fee">₦5000</span> for 10 seats</h5>
             <button
               type="button"
               class="btn-close"
@@ -372,11 +372,11 @@
           <div class="modal-body">
             <form id="form">
               <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">Name</label>
+                <label for="name" class="col-form-label">Name</label>
                 <input type="text" class="form-control-lg" id="name" required />
               </div>
               <div class="mb-3">
-                <label for="recipient-name" class="col-form-label"
+                <label for="occupation" class="col-form-label"
                   >Occupation</label
                 >
                 <input
@@ -387,7 +387,7 @@
                 />
               </div>
               <div class="mb-3">
-                <label for="recipient-name" class="col-form-label"
+                <label for="number" class="col-form-label"
                   >Phone number</label
                 >
                 <input
@@ -398,19 +398,16 @@
                 />
               </div>
               <div class="mb-3">
-                <label for="session-select" class="col-form-label"
-                  >Select session</label
+                <label for="email" class="col-form-label"
+                  >Email</label
                 >
-                <select
-                  class="form-control-lg select-session"
-                  id="session-select"
-                >
-                  <option>1st Session 9am</option>
-                  <option>2nd Session 11am</option>
-                  <option>3rd Session 1pm</option>
-                  <option>4th Session 3:30pm</option>
-                </select>
+                <input
+                  type="text"
+                  class="form-control-lg"
+                  id="email"
+                />
               </div>
+              
 
               <button
                 type="submit"

@@ -114,6 +114,10 @@ body {
   outline: none;
 }
 
+.date {
+  text-align: center;
+}
+
 #timer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -415,5 +419,13 @@ body {
 
 .toast {
   font-size: 1.6rem;
+}
+
+.fee {
+  color: var(--color-secondary);
+}
+
+.pm {
+  font-size: 1.7rem;
 }
 /*# sourceMappingURL=styles.css.map */
